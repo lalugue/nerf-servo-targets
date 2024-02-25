@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <Servo.h>
 
 // put function declarations here:
 int myFunction(int, int);
