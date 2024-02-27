@@ -1,3 +1,4 @@
+#define SERVO_PIN 9
 #include <Arduino.h>
 #include <Servo.h>
 
@@ -9,7 +10,7 @@ void sweep();
 void setup()
 {
   // put your setup code here, to run once:
-  servo.attach(9);
+  servo.attach(SERVO_PIN);
 }
 
 void loop() {}
