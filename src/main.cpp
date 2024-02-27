@@ -1,6 +1,10 @@
+#define DECODE_NEC
 #define SERVO_PIN 9
+#define IR_RECEIVE_PIN 2
+
 #include <Arduino.h>
 #include <Servo.h>
+#include <IRremote.hpp>
 
 Servo servo;
 
@@ -11,6 +15,14 @@ void setup()
 {
   // put your setup code here, to run once:
   servo.attach(SERVO_PIN);
+
+  Serial.begin(115200);
+
+  // Start the receiver and if not 3. parameter specified, take LED_BUILTIN pin from the internal boards definition as default feedback LED
+  IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);
+
+  Serial.print(F("Ready to receive IR signals of protocols: "));
+  printActiveIRProtocols(&Serial);
 }
 
 void loop() {}
