@@ -25,7 +25,29 @@ void setup()
   printActiveIRProtocols(&Serial);
 }
 
-void loop() {}
+void loop()
+{
+  if (IrReceiver.decode())
+  {
+
+    /*
+     * Print a summary of received data
+     */
+    if (IrReceiver.decodedIRData.protocol == UNKNOWN)
+    {
+      Serial.println(F("Received noise or an unknown (or not yet enabled) protocol"));
+      // We have an unknown protocol here, print extended info
+      IrReceiver.printIRResultRawFormatted(&Serial, true);
+      IrReceiver.resume(); // Do it here, to preserve raw data for printing with printIRResultRawFormatted()
+    }
+    else
+    {
+      IrReceiver.resume(); // Early enable receiving of the next IR frame
+      IrReceiver.printIRResultShort(&Serial);
+      IrReceiver.printIRSendUsage(&Serial);
+    }
+  }
+}
 
 void sweep()
 {
