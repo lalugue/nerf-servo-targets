@@ -55,14 +55,14 @@ void sweep()
   for (pos = 0; pos <= 180; pos += 1)
   {
     servo.write(pos);
-    delay(15);
+    delay(5);
   }
 
-  delay(500);
+  delay(10);
 
   for (pos = 180; pos >= 0; pos -= 1)
   {
     servo.write(pos);
-    delay(15);
+    delay(5);
   }
 }
