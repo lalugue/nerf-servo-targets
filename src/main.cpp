@@ -15,6 +15,7 @@ void setup()
 {
   // put your setup code here, to run once:
   servo.attach(SERVO_PIN);
+  servo.write(0);
 
   Serial.begin(115200);
 
