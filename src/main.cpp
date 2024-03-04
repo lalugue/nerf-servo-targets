@@ -47,6 +47,17 @@ void loop()
       IrReceiver.printIRResultShort(&Serial);
       IrReceiver.printIRSendUsage(&Serial);
     }
+    Serial.println();
+
+    /*
+     * Finally, check the received data and perform actions according to the received command
+     */
+    if (IrReceiver.decodedIRData.command)
+    {
+      Serial.println("Resetting targets");
+      sweep();
+      Serial.println("Targets reset");
+    }
   }
 }
 
