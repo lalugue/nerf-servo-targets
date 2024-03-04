@@ -52,7 +52,7 @@ void loop()
     /*
      * Finally, check the received data and perform actions according to the received command
      */
-    if (IrReceiver.decodedIRData.command)
+    if (IrReceiver.decodedIRData.command && !(IrReceiver.decodedIRData.flags & IRDATA_FLAGS_IS_REPEAT))
     {
       Serial.println("Resetting targets");
       sweep();
