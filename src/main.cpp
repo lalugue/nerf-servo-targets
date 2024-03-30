@@ -2,6 +2,8 @@
 #define SERVO_PIN 9
 #define IR_RECEIVE_PIN 2
 
+#define STOP_ANGLE 45
+
 #include <Arduino.h>
 #include <Servo.h>
 #include <IRremote.hpp>
@@ -53,7 +55,7 @@ void loop()
 void sweep()
 {
   int pos;
-  for (pos = 180; pos >= 45; pos -= 1)
+  for (pos = 180; pos >= STOP_ANGLE; pos -= 1)
   {
     servo.write(pos);
     delay(5);
@@ -61,7 +63,7 @@ void sweep()
 
   delay(1000);
 
-  for (pos = 45; pos <= 180; pos += 1)
+  for (pos = STOP_ANGLE; pos <= 180; pos += 1)
   {
     servo.write(pos);
     delay(5);
