@@ -2,7 +2,7 @@
 #define SERVO_PIN 9
 #define IR_RECEIVE_PIN 2
 
-#define STOP_ANGLE 45
+#define STOP_ANGLE 60
 
 #include <Arduino.h>
 #include <Servo.h>
