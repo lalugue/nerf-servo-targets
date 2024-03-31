@@ -45,9 +45,7 @@ void loop()
 
     if (IrReceiver.decodedIRData.command && !(IrReceiver.decodedIRData.flags & IRDATA_FLAGS_IS_REPEAT))
     {
-      Serial.println("Resetting targets");
       sweep();
-      Serial.println("Targets reset");
     }
   }
 }
