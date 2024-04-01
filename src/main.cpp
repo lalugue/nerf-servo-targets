@@ -43,6 +43,7 @@ void loop()
     }
     Serial.println();
 
+    // Sweep the servo motor with any valid IR remote command/button
     if (IrReceiver.decodedIRData.command && !(IrReceiver.decodedIRData.flags & IRDATA_FLAGS_IS_REPEAT))
     {
       sweep();
