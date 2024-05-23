@@ -17,6 +17,7 @@ void setup()
   servo.attach(SERVO_PIN);
   servo.write(180);
 
+  // @TODO: consider removing serial if future features require more room
   Serial.begin(115200);
 
   IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);
@@ -51,6 +52,9 @@ void loop()
   }
 }
 
+/*
+  @brief sweep the servo from 0 to 180 degrees and back
+*/
 void sweep()
 {
   int pos;
