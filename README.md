@@ -7,3 +7,8 @@ Check out the [blog article](https://lalugue.github.io/blog/remote-controlled-ne
 # Setting up the software
 
 The project uses PlatformIO, it has a helpful guide for [getting started](https://docs.platformio.org/en/latest/integration/ide/pioide.html). After setting up, the project should build successfully
+
+# Libraries used
+
+- Arduino-IRremote ([MIT](https://github.com/Arduino-IRremote/Arduino-IRremote/blob/f5a3af340b4bfcefd1d795984f1eafe1cad631ce/LICENSE))
+- Servo Library for Arduino ([LGPL-2.1](https://github.com/arduino-libraries/Servo/blob/85e8cdd3b1dc26402b3529f86955830b47e19df6/LICENSE.txt))
